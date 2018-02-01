@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+
+</head>
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body * {
+    position: relative;
+    background-size: 100% 100%;
+    background-position: center;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bg {
+    /* background-color: #00aaff; */
+    background-color: black;
+}
+
+.strip {
+    background-color: black;
+    width: 82vh;
+    box-shadow: inset 0 100vh black;
+}
+
+.banner {
+    position: fixed;
+    top: 0;
+    transform: translate(-50%, 0);
+    background-image: url(images/banner.png);
+    background-repeat: no-repeat;
+    background-size: calc(975*.1vh) 100%;
+    height: 18vh;
+    box-shadow: 0 0 10vh 5vh black;
+}
+
+.body {
+    padding-right: 34px;
+    overflow-y: auto;
+    height: 82vh;
+    top: 18vh;
+    transform: translate(-50%, 0);
+}
+
+.album {
+    width: 82vh;
+    height: 82vh;
+    transform: translate(0, 0);
+    left: 17px;
+    top: 0;
+}
+
+.album-1 {
+    background-image: url(images/albums/1.jpg);
+}
+.album-2 {
+    background-image: url(images/albums/2.jpg);
+}
+.album-3 {
+    background-image: url(images/albums/3.jpg);
+}
+.album-4 {
+    background-image: url(images/albums/4.jpg);
+}
+
+</style>
+<body>
+
+<div class="bg">
+    <div class="strip">
+        <div class="body">
+            <div class="album album-4"></div>
+            <div class="album album-2"></div>
+            <div class="album album-3"></div>
+            <div class="album album-1"></div>
+        </div>
+        <div class="banner"></div>
+    </div>
+</div>
+
+</body>
+</html>
