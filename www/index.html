@@ -5,7 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Document</title>
+<title>Online Records</title>
+<script defer src="script.js.gz"></script>
 
 </head>
 <style>
@@ -25,10 +26,35 @@ body * {
     top: 50%;
     transform: translate(-50%, -50%);
 }
+body {
+    background-color: black;
+}
+
+/* #00aaff */
 
 .bg {
-    /* background-color: #00aaff; */
-    background-color: black;
+    position: fixed;
+    width: calc(1920*.1vmin);
+    height: calc(1080*.1vmin);
+}
+
+.logo {
+    background-image: url(resources/images/logo.png);
+    width: calc(2000*.1vh);
+    height: calc(2000*.1vh);
+    animation: logo-mutate 600s linear;
+}
+@keyframes logo-mutate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+.hide {
+    display: none;
 }
 
 .strip {
@@ -37,11 +63,12 @@ body * {
     box-shadow: inset 0 100vh black;
 }
 
+
 .banner {
-    position: fixed;
+    position: absolute;
     top: 0;
     transform: translate(-50%, 0);
-    background-image: url(images/banner.png);
+    background-image: url(resources/images/banner.png);
     background-repeat: no-repeat;
     background-size: calc(975*.1vh) 100%;
     height: 18vh;
@@ -65,32 +92,36 @@ body * {
 }
 
 .album-1 {
-    background-image: url(images/albums/1.jpg);
+    background-image: url(resources/images/albums/1.jpg);
 }
 .album-2 {
-    background-image: url(images/albums/2.jpg);
+    background-image: url(resources/images/albums/2.jpg);
 }
 .album-3 {
-    background-image: url(images/albums/3.jpg);
+    background-image: url(resources/images/albums/3.jpg);
 }
 .album-4 {
-    background-image: url(images/albums/4.jpg);
+    background-image: url(resources/images/albums/4.jpg);
 }
 
 </style>
 <body>
 
-<div class="bg">
-    <div class="strip">
-        <div class="body">
-            <div class="album album-4"></div>
-            <div class="album album-2"></div>
-            <div class="album album-3"></div>
-            <div class="album album-1"></div>
-        </div>
-        <div class="banner"></div>
+<video src="resources/splash.mp4" class="bg">
+</video>
+
+<div class="logo"></div>
+
+<div class="strip">
+    <div class="body">
+        <div class="album album-4"></div>
+        <div class="album album-3"></div>
+        <div class="album album-2"></div>
+        <div class="album album-1"></div>
     </div>
+    <div class="banner"></div>
 </div>
+
 
 </body>
 </html>
